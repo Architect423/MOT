@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b55q3dj6ijtcl"]
+
+[ext_resource type="FontFile" uid="uid://b8m82p05bunsb" path="res://fonts/Roboto-Regular.ttf" id="1_kj6rt"]
+
+[resource]
+default_font = ExtResource("1_kj6rt")
+default_font_size = 16

@@ -1,0 +1,14 @@
+res://fonts/extra_large_ui_element.tres::b8c305f6aa2087e81956dd1cab9bc4ed::1720903493::res://.godot/exported/133200997/export-02e10ac7f8f25eef41a0ab22337d77e6-extra_large_ui_element.res
+res://fonts/grid_title_label_theme.tres::d122c908c68a09db014b428a2feb9a92::1720903494::res://.godot/exported/133200997/export-1d05ac5f3a9cb02356e0ef17f348160b-grid_title_label_theme.res
+res://fonts/large_ui_element.tres::717fecd48045777368fba73df7c48054::1720903494::res://.godot/exported/133200997/export-ab2b864dfe0f878fbd3e65adec2ec601-large_ui_element.res
+res://fonts/medium_ui_element.tres::fa96c02877fa0050217fae350211e6a7::1720903493::res://.godot/exported/133200997/export-5a8c117a3774c7572dced93a09dc16a1-medium_ui_element.res
+res://fonts/panel_background.tres::101091d6827f338480d05448a67a9a53::1718468154::res://.godot/exported/133200997/export-5238dcefb3b36f485e5c4b3c847b16e4-panel_background.res
+res://fonts/small_ui_element.tres::af8f71acd8657be5d81458b151a93dcf::1720903493::res://.godot/exported/133200997/export-ae7e44ca0e9e9a79a0a900acccfc063e-small_ui_element.res
+res://fonts/upgrade_buy_label_theme.tres::25f9014bb6004e3513b1d54ed5652752::1720903493::res://.godot/exported/133200997/export-c68bb7e34c52575270a63c19690b4eb8-upgrade_buy_label_theme.res
+res://fonts/upgrade_cost_label_theme.tres::047062c81172ce0398ea02c0d66e1cc9::1720903493::res://.godot/exported/133200997/export-368827f4fa25c173e95d1b6168c0801b-upgrade_cost_label_theme.res
+res://fonts/upgrade_desc_label_theme.tres::2e58b1d805155d24b651838b38e1b584::1720903493::res://.godot/exported/133200997/export-ac596a4c843730b352fc80b874f02c9c-upgrade_desc_label_theme.res
+res://fonts/upgrade_name_label_theme.tres::828779658d991bc21fee77fd0a0f59db::1720903493::res://.godot/exported/133200997/export-ec665eb3732492c18d676f6ceb65f6e8-upgrade_name_label_theme.res
+res://scenes/test.tscn::8087bb228c0455b735267b797ed60c27::1720197267::res://.godot/exported/133200997/export-a8ffa8455ee75708b6c34cd8d7888dc7-test.scn
+res://scenes/ui.tscn::a2d7fe3e2e379babe5c288f03e162dc6::1720904448::res://.godot/exported/133200997/export-9211dc52ac9df169ba4fe77cbc1dc833-ui.scn
+res://scenes/upgrades_container.tscn::ad971e0d9766a675e86ba1135a2afdc7::1720904448::res://.godot/exported/133200997/export-d1185b62bb078cead549ccaa0260ac95-upgrades_container.scn
+res://scenes/prestige.tscn::a31940584aef39e8ded71d1207002c16::1720904448::res://.godot/exported/133200997/export-b9cba528f95a1ca1d8b8c9d046e230f6-prestige.scn

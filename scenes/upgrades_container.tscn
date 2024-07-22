@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqthhwxuf7taf"]
+
+[ext_resource type="Script" path="res://scripts/upgrades_container.gd" id="1_ucjja"]
+[ext_resource type="Theme" uid="uid://bs3hog6mfe7vw" path="res://fonts/extra_large_ui_element.tres" id="2_hjtop"]
+
+[node name="upgrades_container" type="VBoxContainer"]
+custom_minimum_size = Vector2(340, 0)
+script = ExtResource("1_ucjja")
+metadata/grid = "farm"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 2
+theme = ExtResource("2_hjtop")
+theme_override_font_sizes/font_size = 26
+text = "Upgrades"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VboxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="ScrollContainer/VboxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2

@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b1aa415c1w6f"]
+
+[ext_resource type="FontFile" uid="uid://b8m82p05bunsb" path="res://fonts/Roboto-Regular.ttf" id="1_ijpci"]
+
+[resource]
+default_font = ExtResource("1_ijpci")
+default_font_size = 14

@@ -1,0 +1,8 @@
+res://scripts/books.gd
+res://scripts/Button_Panel.gd
+res://scripts/console.gd
+res://scripts/console_scroll_ctn.gd
+res://scripts/discoveries.gd
+res://scripts/Discovery_Panel.gd
+res://scripts/education_tiers.gd
+res://export_presets.cfg

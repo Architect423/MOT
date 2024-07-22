@@ -1,0 +1,136 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5404fkccv63l"]
+
+[ext_resource type="Script" path="res://scripts/Go_Back_In_Time_Panel.gd" id="1_sfo4o"]
+[ext_resource type="Theme" uid="uid://b0scloxqyb51x" path="res://fonts/large_ui_element.tres" id="2_ikuvg"]
+[ext_resource type="Theme" uid="uid://b55q3dj6ijtcl" path="res://fonts/medium_ui_element.tres" id="3_g0emo"]
+[ext_resource type="Script" path="res://scripts/knowledge_points_panel.gd" id="4_nt7sw"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Go_Back_In_Time_Panel" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_right = 700.0
+offset_bottom = 131.0
+script = ExtResource("1_sfo4o")
+
+[node name="MarginContainer" type="MarginContainer" parent="Go_Back_In_Time_Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Go_Back_In_Time_Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ikuvg")
+text = "Go Back in Time"
+horizontal_alignment = 1
+
+[node name="Control2" type="Control" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="close_button" type="Button" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_g0emo")
+text = "X"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_g0emo")
+text = "Travel back in time and start fresh, but with some gained knowledge and bonuses to increase your pace and allowing you to acheive greater feats"
+fit_content = true
+
+[node name="Label2" type="Label" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ikuvg")
+text = "Discoveries"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_g0emo")
+text = "Slot your discoveries to activate them gaining a bonus for your next run"
+fit_content = true
+
+[node name="Panel" type="PanelContainer" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 2
+
+[node name="discoveries_grid" type="GridContainer" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/Panel/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+columns = 6
+
+[node name="discoveries_slots" type="HBoxContainer" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/Panel/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ikuvg")
+text = "Knowledge Points"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_g0emo")
+text = "You gain knowledge points based off your total amount of productivity. You can reallocate them as needed between runs"
+fit_content = true
+
+[node name="knowledge_points_panel" type="PanelContainer" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+script = ExtResource("4_nt7sw")
+
+[node name="knowledge_points_vbox" type="VBoxContainer" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/knowledge_points_panel"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label4" type="Label" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ikuvg")
+text = "Confirm Selections"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_g0emo")
+text = "You can only activate discoveries and allocate knowledge points between runs so make sure you've done everything you need to. This will reset all of your current resources, upgrades, and workers"
+fit_content = true
+
+[node name="confirm_prestige_btn" type="Button" parent="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_g0emo")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Confirm Go Back in TIme"
+
+[connection signal="pressed" from="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/HBoxContainer/close_button" to="Go_Back_In_Time_Panel" method="_on_close_button_pressed"]
+[connection signal="pressed" from="Go_Back_In_Time_Panel/MarginContainer/VBoxContainer/HBoxContainer2/confirm_prestige_btn" to="Go_Back_In_Time_Panel" method="_on_confirm_prestige_btn_pressed"]

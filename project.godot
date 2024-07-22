@@ -1,0 +1,60 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Justgameplay"
+run/main_scene="res://scenes/ui.tscn"
+config/features=PackedStringArray("4.1", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+Resources="*res://scripts/resources.gd"
+Upgrades="*res://upgrades.gd"
+Discoveries="*res://scripts/discoveries.gd"
+Zones="*res://scripts/zones.gd"
+EducationTiers="*res://scripts/education_tiers.gd"
+Workers="*res://scripts/workers.gd"
+Infrastructure="*res://scripts/infrastructure.gd"
+Tools="*res://scripts/tools.gd"
+Stats="*res://scripts/stats.gd"
+UpgradeTypes="*res://scripts/upgrade_types.gd"
+Increments="*res://scripts/increments.gd"
+Tooltips="*res://scripts/tooltips.gd"
+GameManager="*res://scripts/game_manager.gd"
+SaveSystem="*res://addons/save_system/save_system.gd"
+Console="*res://scripts/console.gd"
+Prestige="*res://scripts/prestige.gd"
+KnowledgePoints="*res://scripts/knowledge_points.gd"
+Library="*res://scripts/library.gd"
+Books="*res://scripts/books.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/save_system/plugin.cfg")
+
+[gui]
+
+common/snap_controls_to_pixels=false
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+2d/snap/snap_2d_vertices_to_pixel=true
