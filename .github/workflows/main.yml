@@ -2,26 +2,26 @@ name: Add COOP and COEP headers
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
+
 jobs:
   add-headers:
+    # Skip this job if the commit message contains "[skip headers]"
+    if: "!contains(github.event.head_commit.message, '[skip headers]')"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
         token: ${{ secrets.PAT }}
+    - name: Check if headers already exist
+      id: check_headers
+      run: |
+        if grep -q "Cross-Origin-Opener-Policy" index.html && grep -q "Cross-Origin-Embedder-Policy" index.html; then
+          echo "Headers already exist, skipping."
+          echo "headers_exist=true" >> $GITHUB_OUTPUT
+        else
+          echo "Headers don't exist, will add them."
+          echo "headers_exist=false" >> $GITHUB_OUTPUT
+        fi
     - name: Add headers to HTML files
-      run: |
-        find . -name "*.html" -type f -exec sed -i '/<head>/a \
-        <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">\
-        <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">' {} +
-    - name: Commit changes
-      run: |
-        git config --local user.email "github-actions[bot]@users.noreply.github.com"
-        git config --local user.name "github-actions[bot]"
-        git add .
-        git commit -m "Add COOP and COEP headers" || echo "No changes to commit"
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.PAT }}
-        branch: ${{ github.ref }}
+      if: steps.check_headers.outputs.headers_exist == 'false'
