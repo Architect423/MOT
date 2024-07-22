@@ -6,38 +6,42 @@ on:
 
 jobs:
   add-headers:
-    # Skip this job if the commit message contains "[skip headers]"
     if: "!contains(github.event.head_commit.message, '[skip headers]')"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
         token: ${{ secrets.PAT }}
-    - name: Check if headers already exist
+    - name: Find HTML files and check headers
       id: check_headers
       run: |
-        if grep -q "Cross-Origin-Opener-Policy" index.html && grep -q "Cross-Origin-Embedder-Policy" index.html; then
-          echo "Headers already exist, skipping."
-          echo "headers_exist=true" >> $GITHUB_OUTPUT
-        else
-          echo "Headers don't exist, will add them."
-          echo "headers_exist=false" >> $GITHUB_OUTPUT
-        fi
+        html_files=$(find . -name "*.html")
+        headers_needed=false
+        for file in $html_files; do
+          if ! grep -q "Cross-Origin-Opener-Policy" "$file" || ! grep -q "Cross-Origin-Embedder-Policy" "$file"; then
+            headers_needed=true
+            break
+          fi
+        done
+        echo "headers_needed=$headers_needed" >> $GITHUB_OUTPUT
+        echo "html_files=$html_files" >> $GITHUB_OUTPUT
     - name: Add headers to HTML files
-      if: steps.check_headers.outputs.headers_exist == 'false'
+      if: steps.check_headers.outputs.headers_needed == 'true'
       run: |
-        sed -i '/<head>/a \
-        <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">\
-        <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">' index.html
+        for file in ${{ steps.check_headers.outputs.html_files }}; do
+          sed -i '/<head>/a \
+          <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">\
+          <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">' "$file"
+        done
     - name: Commit changes
-      if: steps.check_headers.outputs.headers_exist == 'false'
+      if: steps.check_headers.outputs.headers_needed == 'true'
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add .
         git commit -m "Add COOP and COEP headers [skip headers]" || echo "No changes to commit"
     - name: Push changes
-      if: steps.check_headers.outputs.headers_exist == 'false'
+      if: steps.check_headers.outputs.headers_needed == 'true'
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.PAT }}
