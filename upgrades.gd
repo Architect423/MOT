@@ -619,6 +619,22 @@ var shop_items = {
 		"unlock_currency": "scratches",
 		"prerequisites": ["Monkeys"]
 	},
+	"Library": {
+		"name": "Library",
+		"label": "Unlock the library tile",
+		"cost": 30000,
+		"units": "scratches",
+		"grid": "scratch",
+		"unlocked": false,
+		"bought": 0,
+		"visible": false,
+		"max_qty": 1,
+		"id": 36,
+		"unlock_cost": 20000,
+		"unlock_currency": "scratches",
+		"upgrade_type": "SimpleVisibility",
+		"upgrade_target": []
+	},
 	# Add more shop items here
 }
 

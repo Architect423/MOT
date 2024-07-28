@@ -16,6 +16,9 @@ extends Control
 @onready var resource_letters_qty_label = %resource_letters_qty_label
 @onready var resource_words_qty_label = %resource_words_qty_label
 
+@onready var letters_pane = %letters_pane
+@onready var words_pane = %words_pane
+
 @onready var game_manager = get_node("/root/GameManager")
 
 func _ready():
@@ -25,8 +28,8 @@ func _ready():
 	resource_4.modulate.a = 0
 	resource_5.modulate.a = 0
 	resource_6.modulate.a = 0
-	resource_letters_qty_label.modulate.a = 0
-	resource_words_qty_label.modulate.a = 0
+	letters_pane.modulate.a = 0
+	words_pane.modulate.a = 0
 	Library.load_library()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -43,9 +46,9 @@ func _process(delta):
 	if Resources.gems > 0:
 		resource_6.modulate.a = 1
 	if Resources.letters > 0:
-		resource_letters_qty_label.modulate.a = 1
+		letters_pane.modulate.a = 1
 	if Resources.words > 0:
-		resource_words_qty_label.modulate.a = 1
+		words_pane.modulate.a = 1
 		
 		
 	resource_bananas_qty_label.text = str(int(Resources.bananas))

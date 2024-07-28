@@ -1,10 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://dvavvjs2nbmil"]
+[gd_scene load_steps=27 format=3 uid="uid://dvavvjs2nbmil"]
 
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_jex4v"]
 [ext_resource type="Script" path="res://scripts/Farm_Panel.gd" id="3_0c5xk"]
 [ext_resource type="PackedScene" uid="uid://dqthhwxuf7taf" path="res://scenes/upgrades_container.tscn" id="4_31wvf"]
 [ext_resource type="Script" path="res://scripts/Button_Panel.gd" id="4_b7aqx"]
-[ext_resource type="Script" path="res://scripts/console_scroll_ctn.gd" id="4_kijnv"]
 [ext_resource type="Script" path="res://scripts/Forge_Panel.gd" id="5_qqybo"]
 [ext_resource type="Theme" uid="uid://d3himslf36oo7" path="res://fonts/grid_title_label_theme.tres" id="5_yhujq"]
 [ext_resource type="Script" path="res://scripts/Tool_inventory.gd" id="6_2lylb"]
@@ -122,33 +121,35 @@ layout_mode = 2
 mouse_filter = 1
 text = "0"
 
-[node name="Resource_2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/MarginContainer/HBoxContainer/Resources_Pane/Resource_Pane_Grid/VBoxContainer"]
+[node name="letters_pane" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/MarginContainer/HBoxContainer/Resources_Pane/Resource_Pane_Grid/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("11_3oivx")
 
-[node name="resource_1_label" type="Label" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/MarginContainer/HBoxContainer/Resources_Pane/Resource_Pane_Grid/VBoxContainer/Resource_2"]
+[node name="resource_1_label" type="Label" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/MarginContainer/HBoxContainer/Resources_Pane/Resource_Pane_Grid/VBoxContainer/letters_pane"]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("11_3oivx")
 text = "Letters:"
 
-[node name="resource_letters_qty_label" type="Label" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/MarginContainer/HBoxContainer/Resources_Pane/Resource_Pane_Grid/VBoxContainer/Resource_2"]
+[node name="resource_letters_qty_label" type="Label" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/MarginContainer/HBoxContainer/Resources_Pane/Resource_Pane_Grid/VBoxContainer/letters_pane"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
 text = "0"
 
-[node name="Resource_3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/MarginContainer/HBoxContainer/Resources_Pane/Resource_Pane_Grid/VBoxContainer"]
+[node name="words_pane" type="HBoxContainer" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/MarginContainer/HBoxContainer/Resources_Pane/Resource_Pane_Grid/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("11_3oivx")
 
-[node name="resource_1_label" type="Label" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/MarginContainer/HBoxContainer/Resources_Pane/Resource_Pane_Grid/VBoxContainer/Resource_3"]
+[node name="resource_1_label" type="Label" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/MarginContainer/HBoxContainer/Resources_Pane/Resource_Pane_Grid/VBoxContainer/words_pane"]
 layout_mode = 2
 mouse_filter = 1
 theme = ExtResource("11_3oivx")
 text = "Words:"
 
-[node name="resource_words_qty_label" type="Label" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/MarginContainer/HBoxContainer/Resources_Pane/Resource_Pane_Grid/VBoxContainer/Resource_3"]
+[node name="resource_words_qty_label" type="Label" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/MarginContainer/HBoxContainer/Resources_Pane/Resource_Pane_Grid/VBoxContainer/words_pane"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 1
@@ -232,20 +233,6 @@ text = "0"
 [node name="Control2" type="Control" parent="MarginContainer/VBoxContainer/Header/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/Header/HBoxContainer"]
-custom_minimum_size = Vector2(700, 0)
-layout_mode = 2
-
-[node name="console_scroll_ctn" type="ScrollContainer" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/PanelContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-horizontal_scroll_mode = 0
-script = ExtResource("4_kijnv")
-
-[node name="console_vbox" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Header/HBoxContainer/PanelContainer/console_scroll_ctn"]
-unique_name_in_owner = true
-layout_mode = 2
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer/Header/HBoxContainer"]
 layout_mode = 2

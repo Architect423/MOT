@@ -17,6 +17,7 @@ var book_authors = {}
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	_spawn_books()
+	Upgrades.shop_items["Library"].upgrade_target = [self]
 	pass # Replace with function body.
 
 
