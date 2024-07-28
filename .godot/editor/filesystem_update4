@@ -1,7 +1,7 @@
 res://scenes/ui.tscn
-res://scripts/Monkey_Panel.gd
 res://fonts/medium_ui_element.tres
 res://fonts/small_ui_element.tres
+res://scripts/Monkey_Panel.gd
 res://scripts/Scavenge_Panel.gd
 res://scripts/upgrades_container.gd
 res://fonts/upgrade_buy_label_theme.tres
@@ -13,6 +13,3 @@ res://fonts/large_ui_element.tres
 res://fonts/grid_title_label_theme.tres
 res://scenes/upgrades_container.tscn
 res://scenes/prestige.tscn
-res://scripts/Library_Panel.gd
-res://scripts/ui.gd
-res://upgrades.gd
